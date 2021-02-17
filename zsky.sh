@@ -8,7 +8,7 @@ if [ $(id -u) != "0" ]; then
 fi
 
 yum -y install git
-git clone https://github.com/wenguonideshou/zsky
+git clone https://github.com/zylx0532/zsky
 cd /root/zsky
 
 if [ $(grep SwapTotal /proc/meminfo|grep -v grep|awk '{print $2}') -eq 0 ];then
@@ -133,7 +133,7 @@ systemctl enable gunicorn
 nohup python /root/zsky/simdht_worker.py >/root/zsky/spider.log 2>&1& 
 #编译sphinx,启动索引,启动搜索进程
 yum -y install git gcc cmake automake g++ mysql-devel
-git clone https://github.com/wenguonideshou/sphinx-jieba
+git clone https://github.com/zylx0532/sphinx-jieba
 cd sphinx-jieba
 git submodule update --init --recursive
 ./configure --prefix=/usr/local/sphinx-jieba
